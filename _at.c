@@ -3,7 +3,7 @@ _at.c
 #include "shell.h"
 
 /**
- * function interact - returns true if shell is interactive mode
+ * interact - returns true if shell is interactive mode
  * @info: struct address
  *
  * Return: 1 if interactive mode, 0 otherwise
@@ -15,7 +15,7 @@ int interact(info_t *info)
 
 
 /**
- * function alpha - checks for alphabetic character
+ * alpha - checks for alphabetic character
  * @c: The character to input
  * Return: 1 if c is alphabetic, 0 otherwise
  */
@@ -31,7 +31,7 @@ int alpha(int c)
 
 
 /**
- * function  delim - checks if character is a delimeter
+ * delim - checks if character is a delimeter
  * @c: the char to check
  * @delim: the delimeter string
  * Return: 1 if true, 0 if false
@@ -46,7 +46,7 @@ int delim(char c, char *delim)
 
 
 /**
- * function _at - converts a string to an integer
+ * _at - converts a string to an integer
  * @s: the string to be converted
  * Return: 0 if no numbers in string, converted number otherwise
  */
