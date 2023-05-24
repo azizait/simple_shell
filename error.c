@@ -36,7 +36,7 @@ void eputs(char *str)
 		return;
 	while (str[i] != '\0')
 	{
-		_eputchar(str[i]);
+		eputchar(str[i]);
 		i++;
 	}
 }
