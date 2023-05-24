@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /**
  * p_alias - prints an alias 
  * @node: the alias node
@@ -8,6 +9,7 @@
 int p_alias(list_t *node)
 {
 	char *p = NULL, *a = NULL;
+
 	if (node)
 	{
 		p = _strchr(node->str, '=');
@@ -44,6 +46,7 @@ int alias(info_t *info)
 	int i = 0;
 	char *p = NULL;
 	list_t *node = NULL;
+	
 	if (info->argc == 1)
 	{
 		node = info->alias;
@@ -65,6 +68,7 @@ int alias(info_t *info)
 	return (0);
 }
 
+
 /**
  * u_alias - sets alias to string
  * @info: parameter struct
@@ -76,12 +80,15 @@ int u_alias(info_t *info, char *str)
 {
 	char *p, c;
 	int ret;
+	
 	p = _strchr(str, '=');
+	
 	if (!p)
 		return (1);
 	c = *p;
 	*p = 0;
-	ret = delete_node_at_index(&(info->alias), get_node_index(info->alias, node_starts_with(info->alias, str, -1)));
+	ret = delete_node_at_index(&(info->alias),
+		get_node_index(info->alias, node_starts_with(info->alias, str, -1)));
 	*p = c;
 	return (ret);
 }
@@ -96,7 +103,9 @@ int u_alias(info_t *info, char *str)
 int s_alias(info_t *info, char *str)
 {
 	char *p;
+	
 	p = _strchr(str, '=');
+	
 	if (!p)
 		return (1);
 	if (!*++p)
