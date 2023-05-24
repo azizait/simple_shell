@@ -1,11 +1,8 @@
 #include "shell.h"
 
-
-
 /**
  * p_alias - prints an alias 
  * @node: the alias node
- *
  * Return: Always 0 on success, 1 on error
  */
 int p_alias(list_t *node)
@@ -24,7 +21,6 @@ int p_alias(list_t *node)
 	}
 	return (1);
 }
-
 
 /**
  * history - displays the history list
@@ -78,7 +74,6 @@ int alias(info_t *info)
  * u_alias - sets alias to string
  * @info: parameter struct
  * @str: the string alias
- *
  * Return: Always 0 on success, 1 on error
  */
 int u_alias(info_t *info, char *str)
@@ -102,7 +97,7 @@ int u_alias(info_t *info, char *str)
  * @info: parameter struct
  * @str: the string alias
  *
- * Return: Always 0 on success, 1 on error
+ * Return: 0 on success, 1 on error
  */
 int s_alias(info_t *info, char *str)
 {
