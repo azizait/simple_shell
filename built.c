@@ -59,7 +59,7 @@ int cd(info_t *info)
  * Return: exits with a given exit status
  * (0) if info.argv[0] != "exit"
  */
-int exit(info_t *info)
+int _exit(info_t *info)
 {
 	int exitcheck;
 
