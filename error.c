@@ -43,7 +43,7 @@ void eputs(char *str)
 
 
 /**
- * putffiled - writes the character to given string
+ * putfiled - writes the character to given string
  * @c: The character to print in the screen
  * @fd: The filedescriptor to write to
  *
