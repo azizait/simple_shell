@@ -1,6 +1,5 @@
 #include "shell.h"
 
-
 /**
  * cd - changes the current directory of the process
  * @info: Structure containing potential arguments. Used to maintain
@@ -19,8 +18,7 @@ int cd(info_t *info)
 	{
 		dir = _getenv(info, "HOME=");
 		if (!dir)
-			chdir_ret = /* TODO: what should this be? */
-				chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
+			chdir_ret = chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
 		else
 			chdir_ret = chdir(dir);
 	}
@@ -84,9 +82,9 @@ int exit(info_t *info)
 }
 
 /**
- * help - changes the current directory of the process
- * @info: Structure containing potential arguments. 
- * * constant prototype.
+ * _myhelp - changes the current directory of the process
+ * @info: Structure containing potential arguments. Used to maintain
+ * constant prototype.
  * Return: Always 0
  */
 int help(info_t *info)
@@ -96,6 +94,6 @@ int help(info_t *info)
 	arg_array = info->argv;
 	_puts("help call works. Function not yet implemented \n");
 	if (0)
-		_puts(*arg_array); /* temp att_unused */
+		_puts(*arg_array); /* temp att_unused workaround */
 	return (0);
 }
