@@ -25,8 +25,8 @@
 
 /* buffers */
 #define READ_SIZE 1024
-#define WRITE_SIZE 1024
-#define FLUSH -1
+#define WRITE_BUF_SIZE 1024
+#define BUF_FLUSH -1
 
 
 /* using system getline() */
