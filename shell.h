@@ -206,7 +206,7 @@ char *convert_nb(long int, int, int);
 void rm_comments(char *);
 
 /* built.c */
-int exit(info_t *);
+int _exit(info_t *);
 int cd(info_t *);
 int help(info_t *);
 
@@ -225,7 +225,7 @@ void set_info(info_t *, char **);
 void free_info(info_t *, int);
 
 /* envir.c */
-char *getenv(info_t *, const char *);
+char *_getenv(info_t *, const char *);
 int myenv(info_t *);
 int _msetenv(info_t *);
 int _munsetenv(info_t *);
