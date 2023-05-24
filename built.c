@@ -13,7 +13,7 @@ int cd(info_t *info)
 
 	s = getcwd(buffer, 1024);
 	if (!s)
-		_eputs("TODO: >>getcwd failure emsg here<<\n");
+		_puts("TODO: >>getcwd failure emsg here<<\n");
 	if (!info->argv[1])
 	{
 		dir = _getenv(info, "HOME=");
@@ -26,11 +26,11 @@ int cd(info_t *info)
 	{
 		if (!_getenv(info, "OLDPWD="))
 		{
-			_eputs(s);
-			_eputchar('\n');
+			_puts(s);
+			_putchar('\n');
 			return (1);
 		}
-		_eputs(_getenv(info, "OLDPWD=")), _eputchar('\n');
+		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
 		chdir_ret = /* TODO: what should this be? */
 			chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
 	}
@@ -39,7 +39,7 @@ int cd(info_t *info)
 	if (chdir_ret == -1)
 	{
 		p_error(info, "can't cd to ");
-		_eputs(info->argv[1]), _eputchar('\n');
+		_puts(info->argv[1]), _putchar('\n');
 	}
 	else
 	{
@@ -70,8 +70,8 @@ int _myexit(info_t *info)
 		{
 			info->status = 2;
 			p_error(info, "Illegal number: ");
-			_eputs(info->argv[1]);
-			_eputchar('\n');
+			_puts(info->argv[1]);
+			_putchar('\n');
 			return (1);
 		}
 		info->err_num = erratointeger(info->argv[1]);
@@ -92,8 +92,8 @@ int help(info_t *info)
 	char **arg_array;
 
 	arg_array = info->argv;
-	_eputs("help call works. Function not yet implemented \n");
+	_puts("help call works. Function not yet implemented \n");
 	if (0)
-		_eputs(*arg_array); /* temp att_unused workaround */
+		_puts(*arg_array); /* temp att_unused workaround */
 	return (0);
 }
