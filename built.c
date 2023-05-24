@@ -53,7 +53,7 @@ int cd(info_t *info)
 
 
 /**
- * exit - exits the shell
+ * _myexit - exits the shell
  * @info: Structure containing potential arguments.
  * constant prototype.
  * Return: exits with a given exit status
@@ -82,7 +82,7 @@ int _myexit(info_t *info)
 }
 
 /**
- * _myhelp - changes the current directory of the process
+ * help - changes the current directory of the process
  * @info: Structure containing potential arguments. Used to maintain
  * constant prototype.
  * Return: Always 0
