@@ -158,10 +158,10 @@ int replace_string(char **, char *);
 int loophsh(char **);
 
 /* toem_errors.c */
-void _eputs(char *);
-int _eputchar(char);
-int _putfd(char c, int fd);
-int _putsfd(char *str, int fd);
+void eputs(char *);
+int eputchar(char);
+int putfield(char c, int fd);
+int putsfiled(char *str, int fd);
 
 /* toem_string.c */
 int _strlen(char *);
@@ -192,25 +192,25 @@ void *_realloc(void *, unsigned int, unsigned int);
 /* memory.c */
 int bfree(void **);
 
-/* atoi.c */
-int interactive(info_t *);
-int is_delim(char, char *);
-int _isalpha(int);
-int _atoi(char *);
+/* at.c */
+int interact(info_t *);
+int delim(char, char *);
+int alpha(int);
+int _at(char *);
 
 /* errors1.c */
-int _erratoi(char *);
-void print_error(info_t *, char *);
-int print_d(int, int);
-char *convert_number(long int, int, int);
-void remove_comments(char *);
+int erratointeger(char *);
+void p_error(info_t *, char *);
+int print_decimal(int, int);
+char *convert_nb(long int, int, int);
+void rm_comments(char *);
 
-/* builtin.c */
-int _myexit(info_t *);
-int _mycd(info_t *);
-int _myhelp(info_t *);
+/* built.c */
+int exit(info_t *);
+int cd(info_t *);
+int help(info_t *);
 
-/* builtin1.c */
+/* built1.c */
 int _myhistory(info_t *);
 int _myalias(info_t *);
 
@@ -225,11 +225,11 @@ void set_info(info_t *, char **);
 void free_info(info_t *, int);
 
 /* envir.c */
-char *_getenv(info_t *, const char *);
-int _myenv(info_t *);
-int _mysetenv(info_t *);
-int _myunsetenv(info_t *);
-int populate_env_list(info_t *);
+char *getenv(info_t *, const char *);
+int myenv(info_t *);
+int _msetenv(info_t *);
+int _munsetenv(info_t *);
+int _env_list(info_t *);
 
 /* getenv.c */
 char **get_envir(info_t *);
