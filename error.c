@@ -80,7 +80,7 @@ int putsfiled(char *str, int fd)
 		return (0);
 	while (*str)
 	{
-		i += _putfd(*str++, fd);
+		i += putfield(*str++, fd);
 	}
 	return (i);
 }
