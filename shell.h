@@ -160,7 +160,7 @@ int loophsh(char **);
 /* toem_errors.c */
 void eputs(char *);
 int eputchar(char);
-int putfield(char c, int fd);
+int putfiled(char c, int fd);
 int putsfiled(char *str, int fd);
 
 /* toem_string.c */

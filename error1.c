@@ -37,13 +37,13 @@ int erratointeger(char *s)
  */
 void p_error(info_t *info, char *estr)
 {
-	_eputs(info->fname);
-	_eputs(": ");
-	print_d(info->line_count, STDERR_FILENO);
-	_eputs(": ");
-	_eputs(info->argv[0]);
-	_eputs(": ");
-	_eputs(estr);
+	_puts(info->fname);
+	_puts(": ");
+	print_decimal(info->line_count, STDERR_FILENO);
+	_puts(": ");
+	_puts(info->argv[0]);
+	_puts(": ");
+	_puts(estr);
 }
 
 /**
@@ -60,7 +60,7 @@ int print_decimal(int input, int fd)
 	unsigned int _abs_, current;
 
 	if (fd == STDERR_FILENO)
-		__putchar = _eputchar;
+		__putchar = _putchar;
 	if (input < 0)
 	{
 		_abs_ = -input;
