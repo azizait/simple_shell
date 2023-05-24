@@ -31,13 +31,13 @@ int alpha(int c)
 /**
  * delim - checks if character is a delimeter
  * @c: the char to check
- * @delim: the delimeter string
+ * @delime: the delimeter string
  * Return: 1 if true, 0 if false
  */
-int delim(char c, char *delim)
+int delim(char c, char *delime)
 {
-	while (*delim)
-		if (*delim++ == c)
+	while (*delime)
+		if (*delime++ == c)
 			return (1);
 	return (0);
 }
