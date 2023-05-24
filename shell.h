@@ -206,7 +206,7 @@ char *convert_nb(long int, int, int);
 void rm_comments(char *);
 
 /* built.c */
-int _exit(info_t *);
+int _myexit(info_t *);
 int cd(info_t *);
 int help(info_t *);
 
