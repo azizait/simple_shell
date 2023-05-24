@@ -24,6 +24,51 @@ int p_alias(list_t *node)
 }
 
 /**
+ * u_alias - sets alias to string
+ * @info: parameter struct
+ * @str: the string alias
+ *
+ * Return: Always 0 on success, 1 on error
+ */
+int u_alias(info_t *info, char *str)
+{
+        char *p, c;
+        int ret;
+
+        p = _strchr(str, '=');
+
+        if (!p)
+                return (1);
+        c = *p;
+        *p = 0;
+        ret = delete_node_at_index(&(info->alias),
+                get_node_index(info->alias, node_starts_with(info->alias, str, -1)));
+        *p = c;
+        return (ret);
+}
+
+/**
+ * s_alias - sets alias to string
+ * @info: parameter struct
+ * @str: the string alias
+ *
+ * Return: Always 0 on success, 1 on error
+ */
+int s_alias(info_t *info, char *str)
+{
+        char *p;
+
+        p = _strchr(str, '=');
+
+        if (!p)
+                return (1);
+        if (!*++p)
+                return (u_alias(info, str));
+        u_alias(info, str);
+        return (add_node_end(&(info->alias), str, 0) == NULL);
+}
+
+/**
  * history - displays the history list
  * @info: Structure containing potential arguments. Used to maintain
  *        constant function prototype.
@@ -68,48 +113,3 @@ int alias(info_t *info)
 	return (0);
 }
 
-
-/**
- * u_alias - sets alias to string
- * @info: parameter struct
- * @str: the string alias
- *
- * Return: Always 0 on success, 1 on error
- */
-int u_alias(info_t *info, char *str)
-{
-	char *p, c;
-	int ret;
-	
-	p = _strchr(str, '=');
-	
-	if (!p)
-		return (1);
-	c = *p;
-	*p = 0;
-	ret = delete_node_at_index(&(info->alias),
-		get_node_index(info->alias, node_starts_with(info->alias, str, -1)));
-	*p = c;
-	return (ret);
-}
-
-/**
- * s_alias - sets alias to string
- * @info: parameter struct
- * @str: the string alias
- *
- * Return: Always 0 on success, 1 on error
- */
-int s_alias(info_t *info, char *str)
-{
-	char *p;
-	
-	p = _strchr(str, '=');
-	
-	if (!p)
-		return (1);
-	if (!*++p)
-		return (u_alias(info, str));
-	u_alias(info, str);
-	return (add_node_end(&(info->alias), str, 0) == NULL);
-}
